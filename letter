@@ -1,0 +1,58 @@
+给社区的信—郑茂林博士
+
+
+朋友们，元一社区会员们，
+
+
+真的感谢你们过去一年半的支持。在Seele 项目极端困难的时刻，2018年12月14日基金会的两位负责人签署文件，把Seele 募资余下的各种数字资产移交给我时（按当天价格换算成USDT不足四十万），我的任务是必须在2019年3月31日之前发布元一主网。
+当时我的旧金山的团队总共6人，算上我共5个开发者（现在6个开发者）。怀着对元一项目负责任（我起始是顾问角色）、对我的团队的信心和我个人对加密货币及区块链的信仰，我接受了这个挑战。
+诸位都知道，2018年底是数字币区块链最低潮的时候。在团队同事卓绝努力下，元一主网在2019年3月31日成功发布，并已经成功运行至今！
+我为我的团队骄傲，我的同事个个都是好样的，5个开发者中有4个博士。进入四月我们所剩资金已经不多，五月份原基金会的一位同事带来polyChain Capital 的朋友， 经过双方了解， 来的客人决定投资Seele Tech, 100万美金，一年。
+一年后看元一主链子链开发进展，决定是否再继续投资。元一子链测试版于2020年3月31日发布。
+现在的情况，大家都知道了，由于covid-19, 投资者决定暂停投资。我和我的团队非常感谢元一基金会，polyChain Capital 的朋友，和元一社区过去两年来对我的团队的信任和支持。
+
+我在这里先讲两个开发中的小故事。
+
+1. 加密数字币的最重要的特性是不被少数控制，也就是大家说的去中心：整个区块链和社区是个自组织自适应的系统。为了保证这个特性，元一独创了基于HASH和矩阵计算的MPoW工作量证明共识算法，与元一第一版发布时的PoW工作量证明共识算法与之不同。时间回到新上线的主网成功运行三周左右，元一主网突然出现一个miner ，其速度出奇的快，控制了整个网络，其他miners 一个一个离开了。第一个元一主网危机！经过同事们的努力，我们发现元一的共识算法，经过简单的变换可在asic矿机上运行，比较容易被控制。经过仅三周的努力，我们成功地研发发布现在一直运行的MPoW。这次我们深深体会到一个容易被少数算力控制的系统很难鼓励公平竞争，更不用说保证安全。
+
+2. 元一子链目前用的共识算法是PBFT算法，一种投票机制。如何保证子链资金安全是很有挑战性的命题：譬如子链的一个用户怀疑自己的某笔交易出了问题，通常的做法是由用户提供证据来，这对掌握数据不多的用户是困难的。元一子链成功实现如下逻辑：用户不需提供证明，只要提出挑战，证明对错由验证者或投票者给出证据，这样就把负担从用户转移到验证者。 克服实现这个逻辑的技术难度，元一研发者做到了！
+
+另外，元一的分片技术目前也应该是市面上少见的。元一主网最大程度地避免了跨片交易的双花问题，成功实现了四个分片的长期稳定运行。在分片技术的支撑下，元一主网的交易容量为普通单链网络的四倍，并可视情况继续增加。
+
+两年来不分昼夜的思考，我的团队对区块链和加密数字币的理解，从数学模型到编写代码都达到优秀水平，堪称世界一流。他们有物理学家，有数学家，有计算机学家等等，真的太棒了！我知道，他们用对数字币和区块链的信仰驱动每天的工作，绝不是为钱而来：他们任何一个随便换换工作都会比在SeeleTech 付的多。真心的感激，神不会亏待每个努力的人！
+
+好了现在该说说我自己了。我是一个数学家，从事过各种工作，但一直使用的是数学，多年研究数学模型和算法，现在从事编写元一代码的工作。深爱数学，深爱自由。我一介书生不能解决世间一切不公的问题，但比特币的出现，使我看到了一点点希望：至少在不久的将来，人们可以做自己资产的主人，不用担心你的账户会被某种力量剥夺，而且绝对安全。我对PoW 工作量证明算法情有独钟：不仅有数学的巧妙和美，也包含着天上不会掉馅饼的浅显道理。
+
+我马上就要跨进领退休金的行列了，钱对我来说已经不那么的重要，更重要的是对自由及对数学的信仰，现在再加一个对数字币、PoW和区块链的信仰。社区提的种种有关围绕元一ERC20 代币问题，不是我不愿意回答，而是我的确没有答案。相信基金会的公告，大股东的公告都清楚的回答了诸位的问题。
+
+有一点可以告诉大家，有些网站可以被封，但元一主网谁也封不掉，支持它的是社区，能关掉它的同样是你们。我会继续和团队一起为数字币和区块链继续工作，做一个没有任何预设、不预留任何特权、不被控制、不被操纵的数字币，为人类的公平正义做点贡献！
+
+衷心的感谢大家。以后在我们自己团队的数字币区块链项目上，我保证一定有问必答—因为它没有ERC20 代币，ERC20代币和人们的贪婪连得太紧！
+
+A letter to Seele Community from Dr. Zheng Maolin
+
+Dear friends and members of Seele Community,
+
+I really appreciate your support for the past year and a half. When Seele was extremely difficult, two heads of the foundation signed a document on December 14, 2018, and handed over all the remaining digital assets raised by Seele to me (less than 400,000 USDT if converted to USDT at the price of the day): the mission was to release Seele Mainnet before March 31, 2019. At that time, my San Francisco team had a total of 6 people, myself included there would be 5 developers (now 6). With a sense of responsibility for Seele (though I started as only an advisor), confidence in my team, and my personal belief in cryptocurrency and blockchain, I accepted this challenge. As you all know, the end of 2018 was the lowest time for digital currency. Thanks to the outstanding efforts of Dev Team, Seele Mainnet was successfully released on March 31, 2019, and has been successfully operating till now! I am proud of my team. All of my colleagues are sharp, and 4 of the 5 developers have PhDs. In April, we have little funds left. In May, a colleague from the original foundation brought friends from polyChain Capital. After mutual understanding, the guests decided to invest in Dev Team 1 million USD for a year. They planed to wait for a year to see the development progress of Seele Mainnet, then decide whether to continue to invest. Seele Subchain Beta was released on March 31, 2020. Everyone knows the current situation. Because of covid-19, investors decided to suspend investment. My team and I are very grateful to the Seele Foundation, friends of polyChain Capital, and the Seele Community for their trust and support for my team in the past two years.
+
+Let me share two stories that happened during development.
+
+1. The most important feature of cryptocurrency is that it is not controlled by a few, known as decentralization; the entire blockchain and community should live as a self-organizing and self-adaptive system. In order to ensure this feature, Seele Team created the MPoW proof-of-work consensus algorithm based on hash and matrix algebra, which is different from the proof-of-work consensus algorithm of Seele when first released. Rewind to when Seele Mainnet was successfully launched and had only been running for about three weeks, a very powerful miner suddenly appeared on the Seele Mainnet, controlling the entire network, causing other miners to leave one by one. This is the first Seele Mainnet crisis! Through the efforts of our colleagues, we found that Seele's consensus algorithm, after a simple transformation, can be run on an ASIC mining machine, which makes it easier to control. After only three weeks of hard work, we successfully developed and released the MPoW that has been employed till now. This opportunity provided us a deep realization, that in a system easily controlled by a few machines through computing power it is difficult to encourage fair competition, let alone ensure safety.
+
+2. The current consensus algorithm used by Seele Subchain is PBFT algorithm, a voting mechanism. How to ensure the safety of sub-chain funds is a very challenging proposition. For example, if a user of the sub-chain suspects that a transaction of his own has a problem, the usual practice is to let the user provide evidence, which is difficult for users with very little data available. Seele Subchain successfully implements the following logic: Users do not need to provide proofs; Instead, users will challenge, and it is the verifier/voter who will collect proof: The burden of proof is on the verifier/voter. Implement this logic requires plowing through immense difficulties, and Seele Dev Team did it!
+
+Also, Seele's sharding technology is rare in the market. Seele Mainnet avoids the double-spending problem of cross-shard transactions to the greatest extent, and has successfully achieved long-term stable operation of four shards. With the support of sharding technology, the transaction speed of Seele Mainnet is four times its single-chain alternatives. Shards can be continually added depending on the needs of Seele Mainnet.
+
+After two years of thinking day and night, my team's understanding of blockchain and cryptocurrency, and ability to research mathematical models and code has reached high levels of excellence, arguably world-class. They include physicists, mathematicians, computer scientists and so on, which is really great! I know that they use their faith in digital currency and blockchain to drive their daily work, not money: any of them can change jobs to easily earn more than their pay at SeeleTech. I am sincerely grateful. God will not mistreat the hard working!
+
+Ok, now it is time to talk about myself. I am a mathematician and have worked in various jobs. But I have always been using mathematics. I have been studying mathematical models and algorithms for many years, and now I am working on writing Seele code. I love mathematics and freedom. I can’t solve all the injustices in the world as an insignificant scholar, but the emergence of bitcoin has given me a little hope: at least in the near future, people can be the masters of their own assets, without worrying that your account will be taken away by some power: It stays absolutely safe. I have a special liking for proof-of-work algorithms: not only does it incorporate the ingenuity and beauty of mathematics, but also the obvious truth that there is no free meal.
+
+I am about to enter the ranks of receiving pensions. Money is no longer important to me. What is more important is my belief in freedom and mathematics, now extended to include cryptocurrency, PoW and blockchain. It is not the case that I am not willing to answer various questions raised by the community about Seele ERC20 tokens. I sincerely do not have the answers to those questions. I am sure that the announcement of the foundation and the announcement of the major shareholders answered your questions clearly.
+
+One thing I can tell you is that some websites can be blocked, but no one can block Seele Mainnet! It is the community that supports it, thus you are the ones who can turn it off. I will continue to work with the team in the fields of cryptocurrency and blockchain: we will make a digital currency with no presets, reservations, privileges, control, or manipulation, and contribute to the fairness and justice of human society!
+
+Thank you all sincerely. In the future, on our own team's digital currency blockchain project, I promise to answer every single question-because it will no longer hold ERC20 tokens! ERC20 tokens and the greed of men are too closely tied!
+
+Dr. Zheng Maolin,
+
+April 27th, 2020
