@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/video.css">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/expand.css">
+    <link href="../../images/favicon.ico" rel="icon" type="image/ico" />
+    <title>Seele</title>
+    <meta name="description" content="Seele blockchain is powered by anti-asic MPoW algorithm and Seele Sharding Technology and subchain for high throughput concurrency">
+    <meta name = "keywords" content = "Seele, blockchain, sharding, mPoW, PoW, 区块链, 블록 체인" />
+</head>
+
+
+<body>
+<div class="expand_content">
+<br>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+   <div class="container">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/index.html">
+      <img src="../../images/seele_logo.png" width="112" height="28">
+    </a>
+
+    <a class="navbar-burger burger" data-target="navbar">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+<div id="navbar" class="navbar-menu">
+  <div class="navbar-start">
+      <a class="navbar-item" href="/research.html">
+        Research
+      </a>
+
+      <a class="navbar-item" href="https://www.seelescan.net">
+        Seele Scan
+      </a>
+
+       <a class="navbar-item" href="/developers.html">
+        Developers
+      </a>
+
+       <a class="navbar-item" href="/news-en.html">
+        Announcements
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Languages
+        </a>
+
+            <div class="navbar-dropdown is-hidden-mobile is-boxed">
+                  <!--<div class="navbar-dropdown">-->
+                  <a class="navbar-item" href="/index.html">
+                      English
+                  </a>
+                  <a class="navbar-item" href="/cn">
+                     中文
+                  </a> 
+                  <a class="navbar-item" href="/kr">
+                     한국어
+                  </a> 
+                  <hr class="navbar-divider">
+                  <a class="navbar-item" href="mailto:contact@seele.pro">
+                      Contact
+                  </a>
+            </div> 
+      </div>
+  </div>
+
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+             <a class="button is-success" href="https://github.com/seeleteam">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Github</span>
+              </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+<div class="is-divider"><hr></div>
+<section class="section">
+    <div class="container">
+    <strong>An Introduction to Seele’s Sharding Implementation</strong>
+    <br/><br/>
+    2019-07-12<p/>
+    <br>
+      <p><b>1. Introduction</b><br><br>
+One of the open questions in blockchain technologies is how to make a blockchain scalable so that it can support increasing numbers of both transactions and decentralized applications. There are many proposals for improving scalability such as lighting network[1], sharding[2,3], plasma[4]. A common idea they share is handling transactions in parallel. Sharding is the concept of dividing the network/computation/state into separate shards.<br><br>
+The challenge of sharding implementation is how to obtain information from other shards to verify the validity of cross-shard transactions. For example, if Darren in shard 1 sends some tokens to Max in shard 2, how could block validators in shard 2 know whether Darren has enough account balance? How to guarantee the safety of transactions? When it comes to smart contracts, the verification process is even more complicated because the validators need the state of smart contracts that is not easy to share in the network.<br><br>
+Seele mainnet with sharding implementation was launched on Mar 31, 2019. Besides sharding, it has a unique anti-ASIC MPOW consensus algorithm based on matrix computation. After running for a few months on the mainnet, the algorithm proves to be stable and decentralized. By far, considering the fact that there are not many nodes initially, Seele has 4 shards. Seele mainnet supports intra-shard transactions, cross-shard transactions and intra-shard smart contracts. Based on the statistics, in each shard, a block is generated every 14 seconds, which is close to the target block time: 10 seconds.<br><br>
+The basic idea of sharding in Seele mainnet is to partition the nodes and network into several shards. A transaction between two shards is called a cross-shard transaction. Because a cross-shard transaction involves accounts of two different shards, this transaction should be recorded in both shards. The transaction verification on the receiver’s side is a big challenge because validators in the receiver’s shard do not have the sender’s information at hand. They have to send requests to a remote peer to retrieve the desired information and carefully examine the responses. In Seele mainnet, we use light chains as archives of the other shards, with respect to the shard of the local node. The validity of the light chains is examined based on the POW solutions, which means it is impossible to forge a light chain without computation. If the responses from remote peers are consistent with the light chains, we have a high level of confidence that the cross-shard transaction has been confirmed on the sender’s side. But the maintenance of the light chains should not occupy too much resource such as CPU, storage and bandwidth. To this end, only the block headers are stored in the light chains. We will introduce more details in the next section.<br><br>
+<b>2. Sharding</b><br><br>
+In this section, we will introduce how sharding works in Seele mainnet. At the setup stage, each node chooses a shard to join permanently. Nodes in the same shard share the full information including state, transaction history, etc., while nodes in different shard only share lightweight information such as block headers.<br><br>
+<p align="center">
+  <img src="../../images/8/fig_1.png">
+</p>
+Typically, a node maintains a full chain associated with its shard and several light chains associated with other shards. See Figure 1 for an illustration. The full chain stores all the information of this shard while the light chains only store the block headers of other shards. While synchronizing a full chain, the local node downloads full blocks and verifies every transaction in the blocks. While synchronizing a light chain, only the block headers are downloaded and examined. The light chains serve as references for the full chain to verify cross-shard transactions.<br><br>
+Transactions within a shard are relatively straightforward as all the information needed is accessible in a full chain. The logic of cross-shard transactions is more complicated because each Seele node only uses light chains to keep track of other shards.<br><br>
+<p align="center">
+  <img src="../../images/8/fig_2.png">
+</p>
+Generally, the process of a cross-shard transaction can be divided into two phases. At Phase 1, the transaction is packed in a block by a miner in the sender’s shard and the fund is deducted from the sender’s account balance. After a certain amount of blocks are mined thereafter, we can say that the block with the cross-shard transaction is confirmed. Then miners create a debt and put it in the outgoing debt pool. The outgoing debt pool is a pool for the management of outgoing debts. Every once in a while, the outgoing debt pool checks the debts and sends them out to the nodes of other shards. Outgoing debt pool will remove the debts once it finds them get confirmed in the target shards.<br><br>
+<p align="center">
+  <img src="../../images/8/fig_3.png">
+</p>
+At Phase 2, the debt reaches the receiver’s shard and gets into a incoming debt pool. The miners in the receiver’s shard send a request to the nodes of the sender’s shard for the verification of the debt. If the nodes of the sender’s shard confirm that the cross-shard transaction does exist, they send back the corresponding block header hash. Miners in the receiver’s shard then search for the returned block header hash in their local light chain. If the search is successful, then miners confirm that the debt is valid and move it into a packing queue. Finally, miners pack the debts in the block from the queue and add the fund to the receiver’s account balance.<br><br>
+With the above approach, it usually takes 20 minutes to complete a cross-shard transaction from subtracting sender’s balance to adding receiver’s balance.<br><br>
+<b>3. Security analysis</b><br><br>
+In the receiver’s shard, block validators check whether the amount of debt has been deducted from the sender’s balance after a certain confirmation period. If the debt is forged by a malicious user, block validators can easily find out before it enters the incoming debt pool.<br><br>
+Since a cross-shard transaction is recorded on both the sender’s and the receiver’s shard, there are two possible inconsistencies. The sender’s balance is reduced but the receiver’s balance remains unchanged, or the sender’s balance remains unchanged but the receiver’s balance is increased.<br><br>
+The first scenario is not going to happen in Seele mainnet. As long as the transaction is recorded on the sender’s side, the nodes in the sender’s shard will send out the corresponding debt again when a certain condition is met. Therefore the receiver’s shard always has a chance to record the transaction. The second scenario could lead to an inflation of the whole Seele mainnet. But for this scenario to happen, attackers needs to create a malicious long fork in the sender’s shard. This kind of attack is difficult because Seele’s MPOW algorithm[5] is anti-ASIC and there is an additional mechanism in Seele mainnet to check the consistency of cross-shard transactions.<br><br>
+<b>4. Conclusion</b><br><br>
+With 4 shards, Seele can achieve around 2000 TPS at peak which already meets the needs of many Dapps. Additionally, more shards can be added to Seele mainnet. But more shards mean a higher requirement for network connection. In the future, Seele is going to combine its sharding with subchains to achieve a more scalable system.<br><br>
+<b>5. References</b><br><br>
+[1] Joseph Poon, Thaddeus Dryja. The Bitcoin Lightning Network: Scalable Off-Chain Instant Payments. 2016<br>
+[2] Ethereum. https://github.com/ethereum/wiki/wiki/Sharding-roadmap<br>
+[3] Loi Luu, Viswesh Narayanan, Chaodong Zheng, Kunal Baweja, Seth Gilbert, Prateek Saxena. A Secure Sharding Protocol For Open Blockchains. 2016<br>
+[4] Joseph Poon, Vitalik Buterin. Plasma: Scalable Autonomous Smart Contracts. 2017<br>
+[5] Luke Zeng, Shawn Xin, Avadesian Xu, Thomas Pang, Tim Yang, Maolin Zheng. Seele’s New Anti-ASIC Consensus Algorithm with Emphasis on Matrix Computation. 2019<br></p>
+
+    </div>
+</section> 
+</div>
+<footer class="footer">
+  <div class="content has-text-centered">
+     <p> Copyright © 2020 Seele Foundation</p>
+    <span class="icon">
+        <a href="https://medium.com/@SeeleTech"><i class="fab fa-medium fa-2x"></i></a>
+    </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="icon">
+        <a href="https://www.linkedin.com/company/seeletech"><i class="fab fa-linkedin fa-2x"></i></a>
+    </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="icon">
+        <a href="https://t.me/seeletech"><i class="fab fa-telegram fa-2x"></i></a>
+    </span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="icon">
+        <a href="https://twitter.com/SeeleTech"><i class="fab fa-twitter-square fa-2x"></i></a>
+    </span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+    <span class="icon">
+        <a href="https://github.com/seeleteam"><i class="fab fa-github-square fa-2x"></i></a>
+    </span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="icon">
+        <a href="https://www.weibo.com/u/6561132287"><i class="fab fa-weibo fa-2x"></i></a>
+    </span>
+   </div>
+</footer>
+  <script type="text/javascript" src="../../javascripts/nav.js"></script>
+</body>
+</html>

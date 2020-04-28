@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/video.css">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/expand.css">
+    <link href="../../images/favicon.ico" rel="icon" type="image/ico" />
+    <title>Seele</title>
+    <meta name="description" content="Seele blockchain is powered by anti-asic MPoW algorithm and Seele Sharding Technology and subchain for high throughput concurrency">
+    <meta name = "keywords" content = "Seele, blockchain, sharding, mPoW, PoW, 区块链, 블록 체인" />
+</head>
+
+
+<body>
+<div class="expand_content">
+<br>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+   <div class="container">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/cn/index.html">
+      <img src="../../images/seele_logo.png" width="112" height="28">
+    </a>
+
+    <a class="navbar-burger burger" data-target="navbar">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+<div id="navbar" class="navbar-menu">
+  <div class="navbar-start">
+      <a class="navbar-item" href="/cn/research.html">
+        研究领域
+      </a>
+
+      <a class="navbar-item" href="https://www.seelescan.net">
+        区块浏览器
+      </a>
+
+       <a class="navbar-item" href="/cn/developers.html">
+        开发者
+      </a>
+
+       <a class="navbar-item" href="/cn/news-cn.html">
+        公告
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          语言
+        </a>
+
+            <div class="navbar-dropdown is-hidden-mobile is-boxed">
+                  <!--<div class="navbar-dropdown">-->
+                  <a class="navbar-item" href="/index.html">
+                      English
+                  </a>
+                  <a class="navbar-item" href="/cn">
+                     中文
+                  </a> 
+                  <a class="navbar-item" href="/kr">
+                     한국어
+                  </a> 
+                  <hr class="navbar-divider">
+                  <a class="navbar-item" href="mailto:contact@seele.pro">
+                      联系
+                  </a>
+            </div> 
+      </div>
+  </div>
+
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+             <a class="button is-success" href="https://github.com/seeleteam">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Github</span>
+              </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+<div class="is-divider"><hr></div>
+<section class="section">
+    <div class="container">
+    <strong>Seele Stem子链协议</strong>
+    <br/><br/>
+    2019-09-28<p/>
+    <br>
+      <p>​​作者：Seele Team<br><br>
+<b>1. 简介</b><br>
+区块链被认为是构建价值互联网的关键技术，但是因为吞吐量不够高，目前还不能满足很多应用的要求。有几个因素限制了区块链的吞吐量。比如，去中心化的区块链需要各节点达成共识，区块不能生成太快。我们熟知的比特币大约每10分钟产生一个区块。同时，为了方便网络传输，区块不能过大。为了增加区块链吞吐量，人们提出了一些区块链扩展的方案，其中包括分片和子链。分片的基本思路是把区块链网络和状态划分成几个相互等价的片。子链架构是一种具有主从关系的设计。子链依赖主链，提供不同功能。子链可以用一种比主链更中心化的共识机制来提高吞吐量，满足各种应用的需要。<br><br>
+最知名的子链架构当属Plasma，这是以太坊项目提出的一种layer 2的扩展方案。它的基本想法是用主链上的智能合约作为子链的锚，资产可以在主链和子链间转移。在子链上，资产可以快速地转移，也可以被提取到主链中。人们提出了很多不同的Plasma模型，包括Plasma MVP，Plasma Cash, Plasma snapp,Gluon Plasma 等等。Plasma MVP和Plasma Cash的子链采用UTXO模型，而Plasma snapp和Gluon Plasma的子链使用了账户余额模型。在UTXO模型中，一个主体拥有的资产被分为很多部分，每部分是未消费的交易输出。尽管方便于资产追踪，UTXO模型在资产管理和智能合约兼容上都有局限性。使用账户余额模型的Plasma snapp和Gluon Plasma有更好的灵活性。但是，Plasma snapp不支持子链资产的部分退出，而且也没有完整的“数据不可见”问题 （子链出块者拥有的区块数据对子链普通用户完全或部分不可见）的解决方案。Gluon Plasma支持子链资产部分退出，但是当区块数据对子链普通用户不可见时，它采用了了用户投票的解决方案。用户投票的方案是易受攻击的，特别是在子链用户少的时候。因此，有必要提出一种更可靠，拥有更强大功能的子链模型。<br><br>
+本文提出Seele Stem子链协议（下文简称Stem) , 在保障子链资金安全的同时，提供齐全的服务功能。Stem支持账户余额模型、安全和灵活的资金存取/退出操作、从主链的Stem智能合约快速获取账户余额信息、可调整的子链状态确认时间。更重要的是，它有完整的针对“数据不可见”问题的解决方案，这是其他Plasma方案所不具有的。以下，我们将介绍Stem模型的基本设计和主要特性。<br><br>
+<b>2. Seele Stem概况</b><br>
+SeeleStem子链协议主要由两部分组成：子链和在主链上部署的Stem智能合约。子链可以支持不同的共识机制，比如BFT, POS和DPOS等等。Stem智能合约是主链和子链联系的接口（见图1）。<br><br>
+在Seele Stem子链协议中有三种角色：子链创建者，子链维护者和普通用户（参见图2）。子链创建者是Stem智能合约的创建者。创建合约需要一定量的押金。<br><br>
+<figure align="center">
+<img src="../../images/stem/1.jpg">
+<figcaption>图1. 主链子链结构示意图</figcaption><br>
+</figure>
+子链维护者需在Stem智能合约上注册并且承担生成子链区块的任务。维护者可以在合约创建时注册，也可以在合约创建后注册。注册时维护者要存放一定的初始押金，这些押金在子链是可以消费的，但要维持账户最低余额。一个主要的对子链维护者的经济激励是他们可以从区块生成中获取交易费。这些交易费可以从Stem智能合约中提取。<br><br>
+普通用户可以存放资金在Stem智能合约并且在子链得到相应价值的代币。他们可以参与子链的多数活动，但不能生成子链的区块。由于子链维护者可能会作恶， Stem提供了让普通用户监督子链维护者的机制，并且不会降低子链出块的效率。<br><br>
+<figure align="center">
+<img src="../../images/stem/2.jpg">
+<figcaption>图2. 子链的各角色功能图</figcaption><br>
+</figure>
+Stem智能合约里记录了子链维护者和普通用户的账户余额。子链维护者或者子链创建者按照一定的频率提交中继区块（中继区块由选取的子链区块的部分数据组成）到Stem智能合约。基于中继区块，Stem智能合约里的账户状态会被更新，并提交某些数据的哈希作为新状态的证明。如果用户发现他们的账户余额不正确，可以提交挑战，要求子链维护者证明最新提交的中继区块是正确的。有效的证明可以移除相应的挑战。在一定的挑战期过后，如果没有待回应的挑战存在，中继区块和新的Stem 合约状态将被确认，不可更改。对中继区块的挑战流程见图3。<br><br>
+为了减少无效的中继区块提交，子链维护者或创建者每次提交中继区块都需要付一定量的保证金。如果一个中继区块被挑战成功，相应的保证金将被转给成功的挑战者。相似的，为了减少无效的挑战，每次提交挑战需要付挑战保证金。如果挑战失败，相应的保证金将被转给证明提供者。以上的机制提供了一个减少恶意操作的经济奖惩模型。<br><br>
+除了存放资金到子链，从子链撤出资金是Stem另外一个关键的功能。在已确认的账户余额有充足的资金时，撤出请求才能生效。如果子链维护者不想继续参与维护子链，他们可以从子链完全退出。他们也可以选择从子链中提取交易费。对于普通用户，他们可选择撤出部分子链资金。这是一个用户友好的特性，因为在很多其他Plasma模型中，用户在撤出时必须撤出所有资金。在Stem中，有效的撤出请求总是可以被执行。存放和撤出操作会使主链和子链的状态发生改变。Stem的设计确保主链和子链在两个中继区块提交的间隔里独立运行，保证了整体效率。<br><br>
+<figure align="center">
+<img src="../../images/stem/3.jpg">
+<figcaption>图3. 对中继区块的挑战流程示意图</figcaption><br>
+</figure>
+<b>3. Seele Stem的主要特性</b><br>
+和其他Plasma模型比较，Stem有几个突出的特性<br><br>
+a. 解决了数据不可见问题<br>
+数据不可见问题指在子链维护者隐藏了信息的情况下，子链普通用户不能在Stem智能合约挑战子链维护者。这是一个大多数Plasma模型都未解决的难题。比如，Gluon Plasma和 Stem在账户余额模型和通过中继区块更新账户状态上有相似之处。但是，Gluon Plasma没有很好地解决数据不可见问题，故采用了用户投票的方式来试图解决。而在子链用户不多的情况下，用户投票是不安全的。Stem确保普通用户可以在不依赖于其他用户的情况下保护自己的账户。普通用户不需要提供子链维护者作弊的证明，只需让维护者证明某一个账户的状态更新是有效的即可。因为子链维护者应该拥有子链的所有区块数据，他们可以提供有效的证明。加上其他的一些机制比如防止子链通胀，Stem可以完全解决数据不可见问题。<br><br>
+b. 账户余额模型<br>
+很多Plasma模型，比如Plasma MVP，使用UTXO模型来追踪子链资产。但UTXO模型的缺点是和智能合约不好兼容，也不方便处理大量交易。而账户余额模型更适合于处理复杂状态，和智能合约更兼容。为了向子链提供智能合约的支持，Stem将采用账户余额模型。账户余额将被记录在子链和Stem智能合约中。Stem智能合约里的余额在每次中继区块提交时被更新。<br><br>
+c. 可定制的状态确认时间<br>
+Stem的状态确认时间是可以定制的，也就是说，在Stem智能合约中的子链状态可以按一定的频率进行确认。子链维护者和普通用户的账户余额被记录在Stem智能合约中。按照一定的频率，子链维护者提交中继区块到Stem智能合约并且更新相关的账户余额。中继区块的数据准确性在挑战期内可以被挑战。如果在挑战期结束后，所有的挑战（如果有）被正确回应，那么中继区块将被确认，同时所有相关账户余额更新也被确认。在上一中继区块被确认后，下一个中继区块才被允许提交。如果中继区块在挑战期结束后没有被确认，那么它需要被回滚，使Stem智能合约可以接受新的中继区块。最多可以回滚一个中继区块。<br><br>
+d. 灵活的资金存取<br>
+在Seele Stem中，子链维护者和普通用户可以安全地存放资金在子链上，并且从子链撤回资金。有一些Plasma模型只支持账户资金完全退出， Stem支持一个账户部分和全部资金退出。所有的存放和撤回请求在Stem智能合约中有三种状态：请求状态，执行状态和执行后状态。在请求状态中的请求是可以被取消的。如果存放和撤回请求在子链中没有被正确执行，子链维护者和普通用户仍然可以从Stem智能合约中撤回他们的资金。<br><br>
+e. 轻量的信息存储<br>
+每次提交的中继区块，Stem智能合约并不存放整个区块的信息。它仅存储中继区块提交者，当前时间戳，需要更新的账户信息，以及两个Merkle树的根哈希。其中一个Merkle树的每个叶子代表了一个账户的余额。另一个Merkle树的每个叶子记录了一个账户从上一个中继区块到新中继区块发生的交易记录。主链增加的存储数据实际上是很少的。因此，Seele主链可以同时支持多个子链。<br><br>
+<b>4. 结论</b><br>
+ 本文引进和介绍了Seele Stem子链协议, 一个提高区块链扩展性的新协议。Stem 具有安全，效率高和用户友好的特性。更多的技术细节我们将在未来的文章中发布。本文省略了Stem子链智能合约的介绍。如何保护子链智能合约的安全是我们研究的重要问题之一。</p>
+
+    </div>
+</section> 
+</div>
+</body>
+<footer class="footer">
+  <div class="content has-text-centered">
+     <p> Copyright © 2020 Seele Foundation</p>
+    <span class="icon">
+        <a href="https://medium.com/@SeeleTech"><i class="fab fa-medium fa-2x"></i></a>
+    </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="icon">
+        <a href="https://www.linkedin.com/company/seeletech"><i class="fab fa-linkedin fa-2x"></i></a>
+    </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="icon">
+        <a href="https://t.me/seeletech"><i class="fab fa-telegram fa-2x"></i></a>
+    </span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="icon">
+        <a href="https://twitter.com/SeeleTech"><i class="fab fa-twitter-square fa-2x"></i></a>
+    </span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+    <span class="icon">
+        <a href="https://github.com/seeleteam"><i class="fab fa-github-square fa-2x"></i></a>
+    </span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="icon">
+        <a href="https://www.weibo.com/u/6561132287"><i class="fab fa-weibo fa-2x"></i></a>
+    </span>
+   </div>
+</footer>
+  <script type="text/javascript" src="../../javascripts/nav.js"></script>
+</html>
