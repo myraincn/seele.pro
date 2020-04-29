@@ -6,23 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/video.css">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/expand.css">
-    <link href="../images/favicon.ico" rel="icon" type="image/ico" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/video.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/expand.css">
+    <link href="images/favicon.ico" rel="icon" type="image/ico" />
     <title>Seele</title>
     <meta name="description" content="Seele blockchain is powered by anti-asic MPoW algorithm and Seele Sharding Technology and subchain for high throughput concurrency">
     <meta name = "keywords" content = "Seele, blockchain, sharding, mPoW, PoW, 区块链, 블록 체인" />
 </head>
 
-
-
-  <body class="Site">
+  <body>
   <br>
 <nav class="navbar" role="navigation" aria-label="main navigation">
    <div class="container">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/cn/index.html">
-      <img src="../images/seele_logo.png" width="112" height="28">
+    <a class="navbar-item" href="/index.html">
+      <img src="images/seele_logo.png" width="112" height="28">
     </a>
 
     <a class="navbar-burger burger" data-target="navbar">
@@ -34,25 +32,25 @@
 
 <div id="navbar" class="navbar-menu">
   <div class="navbar-start">
-      <a class="navbar-item" href="/cn/research.html">
-        研究领域
+      <a class="navbar-item" href="/research.html">
+        Research
       </a>
 
       <a class="navbar-item" href="https://www.seelescan.net">
-        区块浏览器
+        Seele Scan
       </a>
 
-       <a class="navbar-item" href="/cn/developers.html">
-        开发者
+       <a class="navbar-item" href="/developers.html">
+        Developers
       </a>
 
-       <a class="navbar-item" href="/cn/news-cn.html">
-        公告
+       <a class="navbar-item" href="/news-en.html">
+        Announcements
       </a>
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          语言
+          Languages
         </a>
 
             <div class="navbar-dropdown is-hidden-mobile is-boxed">
@@ -68,7 +66,7 @@
                   </a> 
                   <hr class="navbar-divider">
                   <a class="navbar-item" href="mailto:contact@seele.pro">
-                      联系
+                      Contact
                   </a>
             </div> 
       </div>
@@ -91,22 +89,41 @@
 </div>
 </nav>
     <div class="is-divider"><hr></div>
-      <br>
-<div class="expand_content">
+      <div class="container">
+<section class="section hero is-halfheight has-background-white-ter has-text-black">
+    <div class="hero-body has-text-centered">
+         <div class="container">
+                <div class="columns is-size-4">                
+                    <div class="column has-text-left"><a href="./news/en/17.html">Seele Stem Subchain Beta 1.0 Released!</a><br><br> Seele is powered by anti-asic MPoW algorithm and Seele Sharding Technology for high throughput concurrency with 2000 TPS in the Seele main-net currently as a starting point and highly scalable as demand increases. 
+                    Seele is fully EVM smart contract compatible.<br><br>Seele is the next generation public blockchain infrastructure project having been online since 03/31/2019. Our goal is to create a secure, high performance and scalable blockchain. 
+                </div>
+                  <div class="column">
+                      <div class="video-container">
+                          <iframe width="640" height="360" src="https://www.youtube.com/embed/366yPi3xYo4" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                  </div>
+          </div>
+    </div>
+  </div>
+</section>
+
+<br>
+
 <section class="section">
-<div class="container">
-
-<div class="title">文档</div>
-<a href="https://github.com/seeleteam/go-seele/wiki">Getting Started with Seele</a>
-
-<br><br><br>
-<div class="title">工具</div>
-<a href="https://github.com/seeleteam/SeeleWallet">Seele Wallet</a>
-<br>
-<a href="/docs/jsdoc/index.html">Seele Javascript SDK</a>
-<br>
-<a href="/map/index.html">Seele节点地图</a>
-
+    <div class="container">
+        <div class="columns section">
+              <div class="column">
+                  <figure class="image is-square">
+                        <img src="./images/algorithm.png">
+                  </figure>
+              </div>
+              <div class="column has-text-left is-size-4">
+                <div class="has-text-link">Matrix-Proof-of-Work Consensus Algorithm</div>
+                 <br>
+                 MPoW (Matrix-Proof-of-Work), an innovative PoW consensus algorithm developed by SeeleTech and implemented in Seele’s main-net. Compared to conventional PoW consensus algorithm, MPoW requires miners to compute the determinants of sub-matrices from a matrix constructed with n hashes other than brute-force-hashing using a hash function to find the target. It consists of several steps which can efficiently prevents ASIC and GPU from dominating the network.
+              </div>
+        </div>
+    </div>
 </section>
 </div>
 
@@ -137,7 +154,6 @@
     </span>
    </div>
 </footer>
-  <script type="text/javascript" src="../javascripts/nav.js"></script>
+  <script type="text/javascript" src="javascripts/nav.js"></script>
   </body>
-
 </html>

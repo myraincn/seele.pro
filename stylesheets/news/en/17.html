@@ -6,21 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/video.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/expand.css">
-    <link href="images/favicon.ico" rel="icon" type="image/ico" />
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/video.css">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/expand.css">
+    <link href="../../images/favicon.ico" rel="icon" type="image/ico" />
     <title>Seele</title>
     <meta name="description" content="Seele blockchain is powered by anti-asic MPoW algorithm and Seele Sharding Technology and subchain for high throughput concurrency">
     <meta name = "keywords" content = "Seele, blockchain, sharding, mPoW, PoW, 区块链, 블록 체인" />
 </head>
 
-  <body>
-  <br>
+
+<body>
+<div class="expand_content">
+<br>
 <nav class="navbar" role="navigation" aria-label="main navigation">
    <div class="container">
   <div class="navbar-brand">
     <a class="navbar-item" href="/index.html">
-      <img src="images/seele_logo.png" width="112" height="28">
+      <img src="../../images/seele_logo.png" width="112" height="28">
     </a>
 
     <a class="navbar-burger burger" data-target="navbar">
@@ -88,32 +90,39 @@
   </div>
 </div>
 </nav>
-    <div class="is-divider"><hr></div>
-      <br>
-<div class="expand_content">
+<div class="is-divider"><hr></div>
 <section class="section">
-<div class="container">
-
-<div class="title">Doc</div>
-<a href="https://seeleteam.github.io/seele-doc/">Getting Started with Seele</a><br>
-<a href="/news/en/8.html">An Introduction to Seele’s Sharding Implementation</a><br>
-<a href="/news/en/11.html">The Seele PoW Consensus Algorithm</a><br>
-<a href="/news/en/9.html">Seele Stem subchain protocol Introduction</a><br>
-<a href="https://seeletech.gitbook.io/wiki/developer/intro">Seele Stem subchain protocol documentation</a>
-
-<br><br><br>
-<div class="title">Tools</div>
-<a href="https://github.com/seeleteam/SeeleWallet">Seele Wallet</a>
-<br>
-<a href="/docs/jsdoc/index.html">Seele Javascript SDK</a>
-<br>
-<a href="/map/index.html">Seele Node Map</a>
-
-</section>
-
+    <div class="container">
+    <strong>Seele Stem Subchain Beta 1.0 Released!</strong>
+    <br/><br/>
+    2020-03-31<p/>
+    <br>
+      <p>The Seele Stem subchain protocol is a protocol aimed at increasing Seele mainnet&#39;s capacity and manifesting its many diversified and abundant applications. Even though Seele mainnet has a high throughput with sharding technology (so far 4 shards but can be increased as needed), its ability of handling high volume transactions is still limited. The Seele Stem subchain protocol enables unlimited groups of users to build their own blockchains and interact with the Seele mainnet securely. The transaction per second (TPS) could be very large in a subchain (public or permissible) while the safety of the assets are well protected by Seele mainnet. Hence, the Seele Stem subchain can serve all kinds of blockchain applications without adding too much burden to the mainnet.<br><br>
+After months of development, we are pleased to release Seele Stem subchain Beta 1.0, which contains a group of exciting features:<br><br>
+<div class="content">
+<ol>
+  <li>Seele Stem subchain PBFT consensus protocol provides high TPS.</li><br>
+  <li>Flexible to customize all parameters for different subchains.</li><br>
+  <li>All interactions between subchains and Seele mainnet will be conducted as transactions, which can be recorded and verified easily.</li> <br>
+  <li> Fast deployment of Seele Stem contract on Seele mainnet; Seele Stem contract stores lightweight status of the associated subchain and serves as a mainnet portal to the subchain.</li><br>
+  <li>Easy-to-follow process of adding/deleting verifiers on PBFT-based subchains.</li><br>
+  <li>Flexible enter/exit operation for normal users.</li><br>
+  <li>Automatic relay of a subchain information to its associated Stem contract.</li><br>
+  <li>Quick check of a subchain status.</li><br>
+  <li>An option for a subchain creator to discard the subchain.</li><br>
+</ol>
 </div>
+In order for you to try the above features out without difficulties, we’ve released a command line tool - Seele Anchor Controller. Later on, we will provide more user-friendly tools. Seele Stem subchain Beta 1.0 provides the basic features of the Seele Stem subchain protocol. In the future release, we will add a challenge feature, which allows participants to supervise the subchain status for public testing. Please read the Seele Stem Subchain <a href="https://seeletech.gitbook.io/wiki/developer/intro">documentation</a> for more details.<br><br></p>
 
-  <footer class="footer">
+<p>We, as always, are dedicated to make Seele better. Thank you for your continuous support！<br><br></p>
+
+<p>Seele Team<br>
+3/31/2020</p>
+
+    </div>
+</section> 
+</div>
+<footer class="footer">
   <div class="content has-text-centered">
      <p> Copyright © 2020 Seele Foundation</p>
     <span class="icon">
@@ -139,6 +148,6 @@
     </span>
    </div>
 </footer>
-  <script type="text/javascript" src="javascripts/nav.js"></script>
-  </body>
+  <script type="text/javascript" src="../../javascripts/nav.js"></script>
+</body>
 </html>
